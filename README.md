@@ -161,6 +161,7 @@ yarn test:coverage # Generate coverage report
 yarn lint         # Run ESLint
 yarn lint:fix     # Fix ESLint errors
 yarn format       # Format code with Prettier
+yarn format:check # Check code formatting
 ```
 
 ### Code Quality
@@ -242,49 +243,58 @@ The build output will be in the `dist/` directory, optimized for production depl
 
 ### Other Platforms
 
-The built application can be deployed to any static hosting service:
+The boilerplate works with any static hosting platform:
 
-- GitHub Pages
-- AWS S3 + CloudFront
-- Firebase Hosting
-- Surge.sh
+- **GitHub Pages**: Deploy directly from GitHub
+- **Firebase Hosting**: Google's hosting platform
+- **AWS S3 + CloudFront**: Enterprise-grade hosting
+- **DigitalOcean App Platform**: Simple deployment
 
 ## 🤝 Contributing
 
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Workflow
+
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+3. Make your changes
+4. Run tests: `yarn test`
+5. Commit your changes: `git commit -m 'feat: add amazing feature'`
+6. Push to the branch: `git push origin feature/amazing-feature`
+7. Open a Pull Request
 
-### Development Guidelines
+### Code Style
 
 - Follow the existing code style
+- Use conventional commit messages
 - Write tests for new features
 - Update documentation as needed
-- Ensure all tests pass before submitting
 
-## 📝 License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- [Vite](https://vitejs.dev/) - Next generation frontend tooling
-- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
-- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
-- [shadcn/ui](https://ui.shadcn.com/) - Beautifully designed components
-- [Vitest](https://vitest.dev/) - Fast unit test framework
-- [Testing Library](https://testing-library.com/) - Simple and complete testing utilities
+- [Vite](https://vitejs.dev/) for the fast build tool
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) for the beautiful components
+- [React Router](https://reactrouter.com/) for client-side routing
+- [Vitest](https://vitest.dev/) for the testing framework
 
 ## 📞 Support
 
 If you have any questions or need help:
 
-- Open an [issue](https://github.com/bolorundurovj/React-Javascript-Boilerplate/issues)
-- Check the [documentation](https://docs.example.com)
-- Contact us at contact@example.com
+- 📧 Email: [contact@example.com](mailto:contact@example.com)
+- 🐛 Issues: [GitHub Issues](https://github.com/bolorundurovj/React-Javascript-Boilerplate/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/bolorundurovj/React-Javascript-Boilerplate/discussions)
 
 ---
 
-Made with ❤️ by the React JavaScript Boilerplate team
+**Made with ❤️ by [Bolorunduro Valiant-Joshua](https://github.com/bolorundurovj)**
+
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bolorundurovj)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bolorundurovb/)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/bolorundurovb)
