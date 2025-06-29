@@ -3,7 +3,6 @@ module.exports = {
   env: { browser: true, es2020: true },
   extends: [
     'eslint:recommended',
-    '@eslint/js',
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
@@ -19,4 +18,13 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  overrides: [
+    {
+      files: ['vite.config.js', '*.config.js', '*.config.cjs'],
+      env: { node: true },
+      rules: {
+        'no-undef': 'off'
+      }
+    }
+  ]
 } 

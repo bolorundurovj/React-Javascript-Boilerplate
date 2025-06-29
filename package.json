@@ -36,6 +36,8 @@
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "deploy": "gh-pages -d dist",
+    "deploy:build": "yarn build && yarn deploy",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -48,31 +50,33 @@
     ]
   },
   "dependencies": {
+    "lucide-react": "^0.263.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.1",
-    "lucide-react": "^0.263.1"
+    "react-router-dom": "^6.8.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
+    "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "gh-pages": "^6.3.0",
     "husky": "^9.1.7",
+    "jsdom": "^22.1.0",
     "lint-staged": "^16.1.2",
     "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5",
-    "vitest": "^0.34.6",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/user-event": "^14.6.1",
-    "jsdom": "^22.1.0"
+    "vitest": "^0.34.6"
   },
   "engines": {
     "node": ">=18.0.0",

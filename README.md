@@ -229,7 +229,49 @@ The build output will be in the `dist/` directory, optimized for production depl
 
 ## 🌐 Deployment
 
-### Vercel (Recommended)
+### GitHub Pages (Recommended)
+
+This boilerplate is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+#### Automatic Deployment
+
+1. **Push to main branch**
+
+   ```bash
+   git push origin main
+   ```
+
+2. **Enable GitHub Pages**
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under **Source**, select **Deploy from a branch**
+   - Choose **gh-pages** branch and **/(root)** folder
+   - Click **Save**
+
+3. **Your site will be available at**
+   ```
+   https://YOUR_USERNAME.github.io/React-Javascript-Boilerplate/
+   ```
+
+#### Manual Deployment
+
+If you prefer manual deployment:
+
+```bash
+# Build the project
+yarn build
+
+# Deploy to GitHub Pages (requires gh-pages package)
+npx gh-pages -d dist
+```
+
+#### Custom Domain (Optional)
+
+1. **Add your domain** to the `cname` field in `.github/workflows/deploy.yml`
+2. **Create a CNAME file** in the `public/` directory with your domain
+3. **Configure DNS** to point to `YOUR_USERNAME.github.io`
+
+### Vercel
 
 1. Connect your GitHub repository to Vercel
 2. Vercel will automatically detect the Vite configuration
@@ -245,7 +287,6 @@ The build output will be in the `dist/` directory, optimized for production depl
 
 The boilerplate works with any static hosting platform:
 
-- **GitHub Pages**: Deploy directly from GitHub
 - **Firebase Hosting**: Google's hosting platform
 - **AWS S3 + CloudFront**: Enterprise-grade hosting
 - **DigitalOcean App Platform**: Simple deployment
