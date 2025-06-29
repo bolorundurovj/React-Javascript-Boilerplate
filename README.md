@@ -12,6 +12,7 @@ A minimal and flexible boilerplate for building modern web applications with Rea
 - **🔧 Developer Experience** - ESLint, Prettier, and TypeScript support
 - **📦 Package Manager** - Yarn for fast, reliable dependency management
 - **🚀 Production Ready** - Optimized build process with Vite
+- **🔒 Git Hooks** - Pre-commit, commit-msg, and pre-push hooks for code quality
 
 ## 🛠️ Tech Stack
 
@@ -24,6 +25,7 @@ A minimal and flexible boilerplate for building modern web applications with Rea
 - **Testing**: Vitest + Testing Library
 - **Linting**: ESLint + Prettier
 - **Package Manager**: Yarn
+- **Git Hooks**: Husky + lint-staged
 
 ## 🚀 Quick Start
 
@@ -35,17 +37,20 @@ A minimal and flexible boilerplate for building modern web applications with Rea
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/bolorundurovj/React-Javascript-Boilerplate.git
    cd React-Javascript-Boilerplate
    ```
 
 2. **Install dependencies**
+
    ```bash
    yarn install
    ```
 
 3. **Start the development server**
+
    ```bash
    yarn dev
    ```
@@ -166,10 +171,48 @@ yarn format       # Format code with Prettier
 
 ### Git Hooks
 
-Consider adding pre-commit hooks for:
-- Running tests
-- Linting code
-- Formatting code
+This boilerplate includes pre-configured Git hooks to ensure code quality:
+
+#### Pre-commit Hook
+
+- Runs ESLint on staged JavaScript/JSX files
+- Formats code with Prettier
+- Automatically fixes auto-fixable issues
+
+#### Commit Message Hook
+
+- Enforces conventional commit message format
+- Ensures descriptive and consistent commit messages
+- Supports scoped commits (e.g., `feat(ui): add new button component`)
+
+#### Pre-push Hook
+
+- Runs all tests before pushing
+- Prevents broken code from being pushed to remote
+- Ensures code quality and test coverage
+
+#### Conventional Commit Format
+
+```
+<type>(<scope>): <description>
+
+Types: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+Examples:
+- feat: add user authentication
+- fix(ui): resolve button alignment issue
+- docs: update README with new features
+- test: add unit tests for Button component
+```
+
+#### Disabling Hooks (if needed)
+
+```bash
+# Skip pre-commit hook for a single commit
+git commit -m "your message" --no-verify
+
+# Skip pre-push hook for a single push
+git push --no-verify
+```
 
 ## 📦 Building for Production
 
@@ -200,6 +243,7 @@ The build output will be in the `dist/` directory, optimized for production depl
 ### Other Platforms
 
 The built application can be deployed to any static hosting service:
+
 - GitHub Pages
 - AWS S3 + CloudFront
 - Firebase Hosting
