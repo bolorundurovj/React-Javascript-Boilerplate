@@ -13,6 +13,7 @@ A minimal and flexible boilerplate for building modern web applications with Rea
 - **📦 Package Manager** - Yarn for fast, reliable dependency management
 - **🚀 Production Ready** - Optimized build process with Vite
 - **🔒 Git Hooks** - Pre-commit, commit-msg, and pre-push hooks for code quality
+- **📋 Automated Changelog** - Generate changelog from conventional commit messages
 
 ## 🛠️ Tech Stack
 
@@ -162,6 +163,13 @@ yarn lint         # Run ESLint
 yarn lint:fix     # Fix ESLint errors
 yarn format       # Format code with Prettier
 yarn format:check # Check code formatting
+
+# Changelog & Releases
+yarn changelog    # Generate changelog for unreleased commits
+yarn changelog:first # Generate full changelog from beginning
+yarn release:patch # Create patch release (0.0.1)
+yarn release:minor # Create minor release (0.1.0)
+yarn release:major # Create major release (1.0.0)
 ```
 
 ### Code Quality
@@ -214,6 +222,75 @@ git commit -m "your message" --no-verify
 # Skip pre-push hook for a single push
 git push --no-verify
 ```
+
+## 📋 Automated Changelog
+
+This boilerplate includes an automated changelog system that generates changelog entries based on conventional commit messages.
+
+### How It Works
+
+The changelog is automatically generated from your commit messages that follow the [Conventional Commits](https://www.conventionalcommits.org/) specification. This ensures consistent, well-structured changelogs.
+
+### Making Releases
+
+#### Quick Release (Recommended)
+
+```bash
+# Patch release (0.0.1) - Bug fixes
+yarn release:patch
+
+# Minor release (0.1.0) - New features
+yarn release:minor
+
+# Major release (1.0.0) - Breaking changes
+yarn release:major
+```
+
+The release script automatically:
+
+1. ✅ Runs tests to ensure quality
+2. 🔨 Builds the project
+3. 📝 Generates/updates the changelog
+4. 📦 Bumps the version
+5. 🏷️ Creates a git tag
+6. 🚀 Pushes to remote
+7. 🔄 Triggers GitHub Actions release workflow
+
+#### Manual Changelog Generation
+
+```bash
+# Generate changelog for unreleased commits
+yarn changelog
+
+# Generate full changelog from the beginning
+yarn changelog:first
+```
+
+### Commit Message Format
+
+The changelog is generated from commits that follow this format:
+
+```bash
+<type>(<scope>): <description>
+
+# Examples:
+feat: add user authentication
+fix(ui): resolve button alignment issue
+docs: update README with new features
+test: add unit tests for Button component
+```
+
+### GitHub Actions Integration
+
+When you create a release, the GitHub Actions workflow automatically:
+
+- Runs tests and builds the project
+- Generates a changelog
+- Creates a GitHub release with the changelog
+- Uploads release assets
+- Updates the CHANGELOG.md file
+
+For detailed documentation, see [docs/CHANGELOG.md](docs/CHANGELOG.md).
 
 ## 📦 Building for Production
 

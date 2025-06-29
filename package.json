@@ -38,7 +38,14 @@
     "test:coverage": "vitest run --coverage",
     "deploy": "gh-pages -d dist",
     "deploy:build": "yarn build && yarn deploy",
-    "prepare": "husky"
+    "prepare": "husky",
+    "changelog": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s",
+    "changelog:first": "conventional-changelog -p conventionalcommits -i CHANGELOG.md -s -r 0",
+    "version": "yarn changelog && git add CHANGELOG.md",
+    "release": "yarn version && git push && git push --tags",
+    "release:patch": "node scripts/release.js patch",
+    "release:minor": "node scripts/release.js minor",
+    "release:major": "node scripts/release.js major"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -66,6 +73,8 @@
     "@vitejs/plugin-react": "^4.0.3",
     "@vitest/ui": "^3.2.4",
     "autoprefixer": "^10.4.14",
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-changelog-conventionalcommits": "^9.0.0",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-react": "^7.32.2",

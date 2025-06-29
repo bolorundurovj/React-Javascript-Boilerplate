@@ -377,3 +377,58 @@ By contributing to this project, you agree that your contributions will be licen
 **Thank you for contributing to React JavaScript Boilerplate!** 🎉
 
 Your contributions help make this project better for everyone in the community.
+
+## 📋 Automated Changelog
+
+This project uses an automated changelog system that generates changelog entries from your commit messages.
+
+### Commit Message Format
+
+All commits must follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
+
+```bash
+<type>(<scope>): <description>
+
+# Examples:
+feat: add new user authentication feature
+fix(ui): resolve button alignment issue
+docs: update README with new features
+test: add unit tests for Button component
+```
+
+### Commit Types
+
+- **feat**: A new feature
+- **fix**: A bug fix
+- **docs**: Documentation only changes
+- **style**: Changes that do not affect the meaning of the code
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **perf**: A code change that improves performance
+- **test**: Adding missing tests or correcting existing tests
+- **build**: Changes that affect the build system or external dependencies
+- **ci**: Changes to CI configuration files and scripts
+- **chore**: Other changes that don't modify src or test files
+- **revert**: Reverts a previous commit
+
+### Making Releases
+
+When contributing features or fixes that should be included in a release:
+
+1. **Ensure your commits follow conventional format**
+2. **Write descriptive commit messages**
+3. **Reference issues when applicable**
+
+The maintainers will handle the release process using the automated release script:
+
+```bash
+# Patch release (bug fixes)
+yarn release:patch
+
+# Minor release (new features)
+yarn release:minor
+
+# Major release (breaking changes)
+yarn release:major
+```
+
+For more details, see [docs/CHANGELOG.md](docs/CHANGELOG.md).
