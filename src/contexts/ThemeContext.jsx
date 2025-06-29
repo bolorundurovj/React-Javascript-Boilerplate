@@ -13,7 +13,8 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme')
-    return savedTheme || 'light'
+    // Validate that the saved theme is either 'light' or 'dark'
+    return savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'light'
   })
 
   useEffect(() => {

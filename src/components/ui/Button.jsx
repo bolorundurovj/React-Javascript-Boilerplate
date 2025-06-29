@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, cloneElement, isValidElement } from 'react'
 import { cn } from '../../lib/utils'
 
 const buttonVariants = {
@@ -23,19 +23,32 @@ const buttonVariants = {
 }
 
 const Button = forwardRef(
-  ({ className, variant = 'default', size = 'default', asChild = false, ...props }, ref) => {
+  ({ className, variant = 'default', size = 'default', asChild = false, children, ...props }, ref) => {
     const Comp = asChild ? 'span' : 'button'
+    
+    const buttonClasses = cn(
+      'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+      buttonVariants.variant[variant],
+      buttonVariants.size[size],
+      className
+    )
+
+    if (asChild && isValidElement(children)) {
+      return cloneElement(children, {
+        className: cn(buttonClasses, children.props.className),
+        ref,
+        ...props,
+      })
+    }
+
     return (
       <Comp
-        className={cn(
-          'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
-          buttonVariants.variant[variant],
-          buttonVariants.size[size],
-          className
-        )}
+        className={buttonClasses}
         ref={ref}
         {...props}
-      />
+      >
+        {children}
+      </Comp>
     )
   }
 )

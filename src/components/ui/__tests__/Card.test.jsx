@@ -14,12 +14,12 @@ describe('Card', () => {
     render(<Card>Card content</Card>)
     const card = screen.getByText('Card content')
     expect(card).toBeInTheDocument()
-    expect(card.parentElement).toHaveClass('rounded-lg', 'border', 'bg-card')
+    expect(card).toHaveClass('rounded-lg', 'border', 'bg-card')
   })
 
   it('applies custom className', () => {
     render(<Card className="custom-card">Custom Card</Card>)
-    expect(screen.getByText('Custom Card').parentElement).toHaveClass('custom-card')
+    expect(screen.getByText('Custom Card')).toHaveClass('custom-card')
   })
 
   it('forwards ref correctly', () => {
@@ -77,12 +77,12 @@ describe('CardContent', () => {
     render(<CardContent>Content</CardContent>)
     const content = screen.getByText('Content')
     expect(content).toBeInTheDocument()
-    expect(content.parentElement).toHaveClass('p-6', 'pt-0')
+    expect(content).toHaveClass('p-6', 'pt-0')
   })
 
   it('applies custom className', () => {
     render(<CardContent className="custom-content">Custom Content</CardContent>)
-    expect(screen.getByText('Custom Content').parentElement).toHaveClass('custom-content')
+    expect(screen.getByText('Custom Content')).toHaveClass('custom-content')
   })
 })
 

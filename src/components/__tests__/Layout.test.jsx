@@ -25,7 +25,8 @@ describe('Layout', () => {
     )
     
     expect(screen.getByText('React Boilerplate')).toBeInTheDocument()
-    expect(screen.getByText('Home')).toBeInTheDocument()
+    // Desktop navigation should be visible
+    expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument()
     expect(screen.getByText('About')).toBeInTheDocument()
     expect(screen.getByText('Contact')).toBeInTheDocument()
   })
@@ -75,7 +76,8 @@ describe('Layout', () => {
     
     // Open menu
     await user.click(menuButton)
-    expect(screen.getByText('Home')).toHaveClass('block')
+    const mobileHomeLink = screen.getAllByRole('link', { name: 'Home' })[1] // Get the mobile nav link
+    expect(mobileHomeLink).toHaveClass('block')
     
     // Close menu
     await user.click(menuButton)
@@ -122,6 +124,7 @@ describe('Layout', () => {
     const aboutLink = screen.getByRole('link', { name: 'About' })
     const contactLink = screen.getByRole('link', { name: 'Contact' })
     
+    // Check that Home link points to root
     expect(homeLink).toHaveAttribute('href', '/')
     expect(aboutLink).toHaveAttribute('href', '/about')
     expect(contactLink).toHaveAttribute('href', '/contact')
@@ -139,7 +142,7 @@ describe('Layout', () => {
     const githubLink = screen.getByRole('link', { name: 'GitHub' })
     const docsLink = screen.getByRole('link', { name: 'Documentation' })
     
-    expect(githubLink).toHaveAttribute('href', 'https://github.com')
+    expect(githubLink).toHaveAttribute('href', 'https://github.com/bolorundurovj/React-Javascript-Boilerplate')
     expect(githubLink).toHaveAttribute('target', '_blank')
     expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer')
     

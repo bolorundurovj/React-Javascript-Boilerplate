@@ -80,7 +80,7 @@ describe('Home', () => {
     
     expect(screen.getByText('Ready to get started?')).toBeInTheDocument()
     expect(screen.getByText(/Clone this repository and start building/)).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /clone repository/i })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /clone repository/i })).toBeInTheDocument()
   })
 
   it('renders feature icons', () => {
