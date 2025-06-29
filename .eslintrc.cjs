@@ -18,6 +18,9 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  globals: {
+    process: 'readonly'
+  },
   overrides: [
     {
       files: ['vite.config.js', '*.config.js', '*.config.cjs'],
