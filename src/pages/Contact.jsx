@@ -1,9 +1,15 @@
-import { useState } from 'react'
-import { Button } from '../components/ui/Button'
-import { Input } from '../components/ui/Input'
-import { Label } from '../components/ui/Label'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/Card'
-import { Mail, MapPin, Phone, Send } from 'lucide-react'
+import { useState } from 'react';
+import { Button } from '../components/ui/Button';
+import { Input } from '../components/ui/Input';
+import { Label } from '../components/ui/Label';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../components/ui/Card';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,35 +17,35 @@ const Contact = () => {
     email: '',
     subject: '',
     message: '',
-  })
+  });
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
+    const { name, value } = e.target;
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData)
+    console.log('Form submitted:', formData);
     // Reset form
     setFormData({
       name: '',
       email: '',
       subject: '',
       message: '',
-    })
-  }
+    });
+  };
 
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
       title: 'Email',
-      description: 'contact@example.com',
-      href: 'mailto:contact@example.com',
+      description: 'ulha2x7m4@mozmail.com',
+      href: 'mailto:ulha2x7m4@mozmail.com',
     },
     {
       icon: <Phone className="h-5 w-5" />,
@@ -53,7 +59,7 @@ const Contact = () => {
       description: 'San Francisco, CA',
       href: '#',
     },
-  ]
+  ];
 
   return (
     <div className="container px-4 py-12 mx-auto">
@@ -64,8 +70,8 @@ const Contact = () => {
             Get in Touch
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a question or want to contribute? We'd love to hear from you.
-            Send us a message and we'll respond as soon as possible.
+            Have a question or want to contribute? We&apos;d love to hear from
+            you. Send us a message and we&apos;ll respond as soon as possible.
           </p>
         </div>
 
@@ -75,7 +81,8 @@ const Contact = () => {
             <CardHeader>
               <CardTitle>Send us a message</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you as soon as possible.
+                Fill out the form below and we&apos;ll get back to you as soon
+                as possible.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -174,7 +181,7 @@ const Contact = () => {
               <CardHeader>
                 <CardTitle>Office Hours</CardTitle>
                 <CardDescription>
-                  When we're available to help you.
+                  When we&apos;re available to help you.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -198,7 +205,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact 
+export default Contact;

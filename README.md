@@ -405,7 +405,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or need help:
 
-- 📧 Email: [contact@example.com](mailto:contact@example.com)
+- 📧 Email: [ulha2x7m4@mozmail.com](mailto:ulha2x7m4@mozmail.com)
 - 🐛 Issues: [GitHub Issues](https://github.com/bolorundurovj/React-Javascript-Boilerplate/issues)
 - 💬 Discussions: [GitHub Discussions](https://github.com/bolorundurovj/React-Javascript-Boilerplate/discussions)
 
